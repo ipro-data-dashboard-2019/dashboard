@@ -1,0 +1,19 @@
+{
+  "name": "data-dashboard",
+  "version": "1.0.0",
+  "description": "Notification dashboard that integrates alert notifications from various sources into a centralized application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipro-data-dashboard-2019/dashboard.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipro-data-dashboard-2019/dashboard/issues"
+  },
+  "homepage": "https://github.com/ipro-data-dashboard-2019/dashboard#readme"
+}
