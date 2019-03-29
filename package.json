@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "devlinux": "SET DEBUG=dashboard:* & npm start",
+    "devwindows": "DEBUG=dashboard:* npm start"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
