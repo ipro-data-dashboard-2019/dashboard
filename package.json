@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devlinux": "SET DEBUG=dashboard:* & npm devstart",
-    "devwindows": "DEBUG=dashboard:* npm devstart",
-    "devstart": "nodemon ./bin/www"
+    "devstart": "nodemon ./bin/www",
+    "devlinux": "DEBUG=dashboard:* & npm devstart",
+    "devwindows": "SET DEBUG=dashboard:* npm devstart"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "mongodb": "^3.2.2",
