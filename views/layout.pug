@@ -1,27 +1,26 @@
 doctype html
-html
+html.h-100
   head
     title= BEAN
     link(rel='stylesheet', href='/css/bootstrap.min.css')
-  body
+  body.h-100
     header
       nav.navbar.navbar-default
         div.container-fluid
-          div
+          div.col-3.text-left
             a(href='#storiesORabout') About
-          div
+          div.col-6.text-center
             img(src='#BEAN')
-          div
+          div.col-3.text-right
             a(href='#accountSettings') Account
-    main
-      div.row
-        div#leftbar.col
+    main.h-100
+      div.row.h-100
+        div#leftbar.col-3.bg-success
           block leftcontent
-        div#mainbar.col
-          div.col
-            div.row#maincontent
-              block maincontent
-            div.row#linkcontent
-              block linkcontent
-        div#rightbar.col
+        div#mainbar.col-6
+          div.h-75.bg-primary#maincontent
+            block maincontent
+          div.h-25.bg-secondary#linkcontent
+            block linkcontent
+        div#rightbar.col-3.bg-danger
           block rightcontent
