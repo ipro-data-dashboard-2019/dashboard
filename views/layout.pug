@@ -14,10 +14,14 @@ html
           div
             a(href='#accountSettings') Account
     main
-      block maincontent
-      section#leftbar
-        block leftcontent
-      section#rightbar
-        block rightcontent
-      section#quicklinks
-        block linkcontent
+      div.row
+        div#leftbar.col
+          block leftcontent
+        div#mainbar.col
+          div.col
+            div.row#maincontent
+              block maincontent
+            div.row#linkcontent
+              block linkcontent
+        div#rightbar.col
+          block rightcontent
