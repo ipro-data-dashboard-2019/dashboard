@@ -2,6 +2,16 @@ extends layout
 
 block maincontent
   p Hey this is where the main feed content goes
+  ul
+    each notification in notifications
+      li.card
+        p #{notification._id}
+        p #{notification.level}
+        p #{notification.calltype}
+        p #{notification.date}
+        p #{notification.time}
+        p #{notification.address}
+        p #{notification.city}
 block leftcontent
   p Hey this is where the left column content goes
 block rightcontent
