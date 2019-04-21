@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
     }
     console.log('We got a response!');
     var noties = JSON.parse(body);
+    console.log(noties);
     res.render('index', { notifications: noties});
   });
 });
