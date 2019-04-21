@@ -1,15 +1,11 @@
 extends layout
 
 block maincontent
-  p Hey this is where the main feed content goes
-  ul
+  div#card-list
     each notification in notifications
-      li.card
-        p #{notification._id}
-        p #{notification.level}
-        p #{notification.calltype}
-        p #{notification.date}
-        p #{notification.time}
+      div.card
+        h5.card-title #{notification.level} - #{notification.calltype}
+        h6.card-subtitle #{notification._id}: #{notification.date} #{notification.time}
         p #{notification.address}
         p #{notification.city}
 block leftcontent
