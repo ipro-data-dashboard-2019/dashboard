@@ -15,12 +15,12 @@ html.h-100
             a(href='#accountSettings') Account
     main.h-100.container-fluid
       div.row.h-100
-        div#leftbar.col-3.bg-success
+        div#leftbar.col-3.bg-success.container
           block leftcontent
         div#mainbar.col-6.h-100
-          div.h-75.bg-primary#maincontent.overflow-auto
+          div.h-75.bg-primary#maincontent.overflow-auto.container
             block maincontent
-          div.h-25.bg-secondary#linkcontent
+          div.h-25.bg-secondary#linkcontent.container
             block linkcontent
-        div#rightbar.col-3.bg-danger
+        div#rightbar.col-3.bg-danger.container
           block rightcontent
