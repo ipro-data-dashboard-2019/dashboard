@@ -1,31 +1,44 @@
 var createError = require('http-errors');
-var express = require('express');
 var path = require('path');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-
+var express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var request = require('request');
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-
+//app.use(express.static(__dirname + '/node_modules')); // TODO Restrict which node modules can be accessed
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/socket.io', express.static(__dirname + '/node_modules/socket.io-client/dist/'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use(express.static(path.join(__dirname, 'public'))); // Allow access to public folder
 
-// catch 404 and forward to error handler
+app.get('/', function (req, res, next) {
+  console.log('Gonna grab some notifications');
+  request.post({url: 'https://ipro-redcross.herokuapp.com/radioman/last/10'}, function optionalCallback(err, httpResponse, body) {
+    if (err) {
+      res.send(err);
+    }
+    console.log('We got a response!');
+    var notties = JSON.parse(body);
+    console.log(notties);
+    res.render('index', {notifications: notties});
+  });
+  //res.sendFile(__dirname + '/index.html');
+});
+
+// Catch 404 and sent to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -36,4 +49,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+io.on('connection', function (socket) {
+  console.log('Connect has been made');
+});
+
+server.listen(3000);
