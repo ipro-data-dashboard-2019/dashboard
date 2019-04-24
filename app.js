@@ -27,10 +27,9 @@ app.get('/', function (req, res, next) {
     }
     console.log('We got a response!');
     var notties = JSON.parse(body);
-    console.log(notties);
+    //console.log(notties);
     res.render('index', {notifications: notties});
   });
-  //res.sendFile(__dirname + '/index.html');
 });
 
 // Catch 404 and sent to error handler
