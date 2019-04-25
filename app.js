@@ -26,9 +26,18 @@ app.get('/', function (req, res, next) {
       res.send(err);
     }
     console.log('We got a response!');
-    var notties = JSON.parse(body);
-    //console.log(notties);
-    res.render('index', {notifications: notties});
+    // Check if response is in a json form
+    console.log(body.charAt(0));
+    if(body.charAt(0) != "{" && body.charAt(0) != "[") {
+      console.log("Error: Response was not in a json format");
+      // TODO Load page with generic cards
+      res.render('index', {notifications: {}});
+    } else {
+      var notties = JSON.parse(body);
+      //console.log(notties);
+      res.render('index', {notifications: notties});
+    }
+    console.log(body);
   });
 });
 
