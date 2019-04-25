@@ -10,12 +10,20 @@ block maincontent
         p #{notification.address}, #{notification.city}
     div.text-center
       button.btn.btn-primary Load More
+
 block leftcontent
   h4.text-center.text-white.bg-secondary Community
-  p Hey this is where the left column content goes
+  h5#community.text-center.text-white Volunteer of the Month
+  img.rounded-circle.center-block(src='/images/volunteer.jpg')
+  h5.text-center Congratulations to Jim Smith! We appreciate your service.
+  br
+  br
+  img.center-block(src='/images/arc.png')
+
 block rightcontent
   h4.text-center.text-white.bg-secondary Flagged Alerts
   p Hey this is where the right column content goes
+
 block linkcontent
   h4.text-center.text-white.bg-secondary Quick Links
   p Hey this is where the link content goes
