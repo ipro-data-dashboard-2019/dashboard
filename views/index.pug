@@ -1,17 +1,21 @@
 extends layout
 
 block maincontent
+  h4.text-center.text-white.bg-secondary Recent Alerts and Notifications
   div#card-list
     each notification in notifications
-      div.card.px-1.my-1
+      div.card.px-1.my-1.bg-light
         h5.card-title #{notification.level} - #{notification.calltype}
         h6.card-subtitle #{notification._id}: #{notification.date} #{notification.time}
         p #{notification.address}, #{notification.city}
     div.text-center
       button.btn.btn-primary Load More
 block leftcontent
+  h4.text-center.text-white.bg-secondary Community
   p Hey this is where the left column content goes
 block rightcontent
+  h4.text-center.text-white.bg-secondary Flagged Alerts
   p Hey this is where the right column content goes
 block linkcontent
+  h4.text-center.text-white.bg-secondary Quick Links
   p Hey this is where the link content goes

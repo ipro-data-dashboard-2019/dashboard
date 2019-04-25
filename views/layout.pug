@@ -5,22 +5,23 @@ html.h-100
     link(rel='stylesheet', href='/css/bootstrap.min.css')
   body.h-100
     header
-      nav.navbar.navbar-default
+      nav.navbar.navbar-default.bg-danger
         div.container-fluid
           div.col-3.text-left
-            a(href='#storiesORabout') About
+            a(href='#storiesORabout').text-white About
           div.col-6.text-center
-            div#logo
+            h5.text-white Board of Emergency Alert Notifications
+            // div#logo
           div.col-3.text-right
-            a(href='#accountSettings') Account
+            a(href='#accountSettings').text-white Account
     main.h-100.container-fluid
       div.row.h-100
-        div#leftbar.col-3.bg-success.container
+        div#leftbar.col-3.bg-light.container
           block leftcontent
         div#mainbar.col-6.h-100.pr-0
           div.h-75#maincontent.overflow-auto.container.px-0
             block maincontent
-          div.h-25.bg-secondary#linkcontent.container
+          div.h-25.bg-light#linkcontent.container
             block linkcontent
-        div#rightbar.col-3.bg-danger.container
+        div#rightbar.col-3.bg-light.container
           block rightcontent
