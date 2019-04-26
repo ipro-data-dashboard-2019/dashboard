@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Allow access to publ
 
 app.get('/', function (req, res, next) {
   console.log('Gonna grab some notifications');
-  request.post({url: 'https://ipro-redcross.herokuapp.com/radioman/last/10'}, function optionalCallback(err, httpResponse, body) {
+  request.post({url: 'https://ipro-redcross.herokuapp.com/radioman/last/25'}, function optionalCallback(err, httpResponse, body) {
     if (err) {
       res.send(err);
     }
